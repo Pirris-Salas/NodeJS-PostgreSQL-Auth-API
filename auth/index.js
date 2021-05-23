@@ -50,7 +50,7 @@ router.post('/signup', async (req, res, next) => {
                             if (err) {
                                 throw err;
                             }
-                            console.log(results.rows);
+                            
                             res.json({ message: `New user: ${name} entered successfully in the system` });
                         }
                     );

@@ -1,13 +1,6 @@
 const express = require('express');
 const app = express();
 const { pool } = require('./dbConfig');
-const bcrypt = require("bcrypt");
-const session = require("express-session");
-const flash = require("express-flash");
-const passport = require("passport");
-
-const initializePassport = require("./passportConfig");
-const initialize = require("./passportConfig");
 
 const PORT = process.env.PORT || 4000;
 var auth = require('./auth/index');
@@ -15,7 +8,6 @@ var auth = require('./auth/index');
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use('/auth', auth);
-
 
 app.listen(PORT, ()=>{
     console.log(`Server running on port ${PORT}`);
